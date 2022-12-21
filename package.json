@@ -1,0 +1,69 @@
+{
+  "name": "ek-defi-job",
+  "version": "1.0.0",
+  "description": "Ekolance Job Distribution MVP",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "npx ts-node build.ts",
+    "start": "ts-node -r tsconfig-paths/register dist/server.js",
+    "server": "nodemon -e ts,js --exec ts-node -r tsconfig-paths/register ./src/server.ts",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npx tsc --watch\" \"npm run server\" \"npm run client\"",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:thellecodes/express-typescript-starter.git"
+  },
+  "keywords": [
+    "Human",
+    "Protocol",
+    "Ekolance"
+  ],
+  "author": "Samuel Anthony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thellecodes/express-typescript-starter/issues"
+  },
+  "homepage": "https://github.com/thellecodes/express-typescript-starter#readme",
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/server.ts",
+    "ext": "ts, js"
+  },
+  "_moduleAliases": {
+    "@configurations": "dist/configurations",
+    "@server": "dist/server",
+    "@routes": "dist/routes",
+    "@utils": "dist/utils"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/fs-extra": "^9.0.13",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.11.17",
+    "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs-extra": "^11.1.0",
+    "helmet": "^6.0.1",
+    "jet-logger": "^1.2.6",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.1"
+  }
+}
